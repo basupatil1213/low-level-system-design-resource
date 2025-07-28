@@ -22,29 +22,43 @@ Factory (creates products)
 Client (uses factory)
 ```
 
-## 📁 Implementation: Notification System
+## 📁 Implementations
 
-### Components
+This directory contains two comprehensive Factory pattern implementations:
 
-1. **`Notification`** (Interface)
-   - Defines the contract for all notification types
-   - Method: `send(String message)`
+### 🔔 [Notification System](notificationSystem/)
+A communication system supporting multiple notification channels.
 
-2. **`EmailNotification`** (Concrete Product)
-   - Implements email notification functionality
-   - Sends messages via email
+**Components:**
+- **`Notification`** (Interface) - Contract for all notification types
+- **`EmailNotification`** - Email-specific implementation
+- **`SMSNotification`** - SMS-specific implementation  
+- **`NotificationFactory`** - String-based factory for creating notifications
+- **`Client`** - Demonstration of usage patterns
 
-3. **`SMSNotification`** (Concrete Product)
-   - Implements SMS notification functionality
-   - Sends messages via SMS
+**Key Features:**
+- String-based type identification
+- Exception handling for unsupported types
+- Easy extensibility for new notification channels
+- Simple factory method approach
 
-4. **`NotificationFactory`** (Factory)
-   - Creates notification objects based on type
-   - Method: `getNotification(String type)`
+### 💳 [Payment System](PaymentSystem/)
+A financial transaction system handling multiple payment methods.
 
-5. **`Client`** (Consumer)
-   - Uses the factory to create notifications
-   - Demonstrates pattern usage
+**Components:**
+- **`Payment`** (Interface) - Contract for all payment methods
+- **`UPIPayment`** - UPI/Digital wallet implementation
+- **`PayPalPayment`** - PayPal gateway integration
+- **`CreditCardPayment`** - Credit card processing
+- **`PaymentFactory`** - Enum-based factory for creating payments
+- **`PaymentType`** (Enum) - Type-safe payment method identification
+- **`Client`** - Demonstration of payment processing
+
+**Key Features:**
+- Enum-based type safety
+- Modern Java switch expressions
+- Compile-time validation
+- Financial domain modeling
 
 ## 🔧 Key Features
 
@@ -53,8 +67,9 @@ Client (uses factory)
 - **Loose Coupling**: Client doesn't depend on concrete classes
 - **Single Responsibility**: Factory handles object creation
 
-## 🚀 Usage Example
+## 🚀 Usage Examples
 
+### Notification System
 ```java
 // Create email notification
 Notification emailNotification = NotificationFactory.getNotification("email");
@@ -63,6 +78,17 @@ emailNotification.send("Welcome to our service!");
 // Create SMS notification
 Notification smsNotification = NotificationFactory.getNotification("sms");
 smsNotification.send("Your OTP is 123456");
+```
+
+### Payment System
+```java
+// Process UPI payment
+Payment upiPayment = PaymentFactory.getPaymentMethod(PaymentType.UPI);
+upiPayment.pay(299.99);
+
+// Process PayPal payment
+Payment paypalPayment = PaymentFactory.getPaymentMethod(PaymentType.PAYPAL);
+paypalPayment.pay(149.50);
 ```
 
 ## ✅ Advantages
@@ -93,8 +119,9 @@ smsNotification.send("Your OTP is 123456");
 2. **Factory Method**: Subclasses decide which class to instantiate
 3. **Abstract Factory**: Creates families of related objects
 
-## 🧪 Running the Example
+## 🧪 Running the Examples
 
+### Notification System
 ```bash
 # Compile and run the notification system
 javac notificationSystem/*.java
@@ -106,6 +133,21 @@ Expected Output:
 Email Notification: User created successfully!
 SMS Notification: User created successfully!
 Notification type not supported: push
+```
+
+### Payment System
+```bash
+# Compile and run the payment system
+javac PaymentSystem/*.java
+java PaymentSystem.Client
+```
+
+Expected Output:
+```
+Paid 143.0 via PayPal
+Paid 286.0 via UPI
+Paid 143.0 via credit card
+Unsupported payment type
 ```
 
 ## 🎓 Interview Questions
@@ -121,6 +163,23 @@ Notification type not supported: push
 
 4. **Q**: How does Factory pattern promote loose coupling?
    **A**: Clients depend on interfaces/abstract classes rather than concrete implementations.
+
+5. **Q**: Compare string-based vs enum-based factories
+   **A**: Enum-based provides compile-time type safety, prevents typos, and offers better IDE support compared to string-based approaches.
+
+6. **Q**: How would you extend the payment system for international markets?
+   **A**: Use Abstract Factory pattern to create region-specific payment ecosystems with localized payment methods.
+
+## 🔍 Pattern Comparison
+
+| Aspect | Notification System | Payment System |
+|--------|-------------------|----------------|
+| Type Safety | String-based (runtime) | Enum-based (compile-time) |
+| Extensibility | Manual string handling | Automatic enum validation |
+| Error Handling | Runtime exceptions | Compile-time checks |
+| IDE Support | Limited | Full auto-completion |
+| Maintenance | Prone to typos | Type-safe refactoring |
+| Use Case | Simple notifications | Financial transactions |
 
 ## 🔗 Related Patterns
 

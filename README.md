@@ -34,7 +34,12 @@ src/main/java/com/basavarajpatil/
 ├── designPatterns/           # Design pattern implementations
 │   └── creational/          # Creational design patterns
 │       ├── factory/         # Factory pattern examples
+│       │   ├── notificationSystem/  # Multi-channel notifications
+│       │   └── PaymentSystem/       # Multi-method payments
 │       └── Singleton/       # Singleton pattern examples
+│           ├── DatabaseConnection/  # DB connection management
+│           ├── Logger/             # Centralized logging
+│           └── ServiceRegistry/    # Service discovery
 └── lldMockInterviews/       # Mock interview problems
     └── easy/               # Easy-level problems
         └── vendingMachine/ # Vending machine implementation
@@ -63,6 +68,7 @@ src/main/java/com/basavarajpatil/
    ```bash
    # Run specific examples
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.notificationSystem.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
    ```
 
@@ -71,7 +77,9 @@ src/main/java/com/basavarajpatil/
 ### 🎨 Design Patterns
 
 #### Creational Patterns
-- **Factory Pattern**: Notification system implementation
+- **Factory Pattern**: 
+  - Notification system implementation (email, SMS)
+  - Payment system implementation (UPI, PayPal, Credit Card)
 - **Singleton Pattern**: Database connection, Logger, Service registry
 
 ### 🧪 Mock Interviews
@@ -93,6 +101,20 @@ src/main/java/com/basavarajpatil/
 - **Think About Scale**: Consider scalability and extensibility
 - **Code Quality**: Write clean, readable, and maintainable code
 - **Test Your Code**: Think about edge cases and error handling
+- **Compare Approaches**: Understand different implementation strategies (e.g., string-based vs enum-based factories)
+
+## 🔍 Key Learning Comparisons
+
+### Factory Pattern Implementations
+| Aspect | Notification System | Payment System |
+|--------|-------------------|----------------|
+| **Type Safety** | String-based (runtime validation) | Enum-based (compile-time validation) |
+| **Error Handling** | Runtime exceptions for invalid types | Compile-time prevention of invalid types |
+| **Extensibility** | Manual string constants | Type-safe enum additions |
+| **IDE Support** | Limited auto-completion | Full IntelliSense support |
+| **Best For** | Simple, flexible systems | Type-critical financial systems |
+
+This comparison helps understand when to choose different implementation approaches based on your system's requirements.
 
 ## 🤝 Contributing
 
