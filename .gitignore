@@ -38,3 +38,95 @@ build/
 .DS_Store
 
 .idea
+
+# Additional Java patterns
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# JUnit
+TEST-*.xml
+
+# Spring Boot
+spring.log
+application-*.properties
+application-*.yml
+!application.properties
+!application.yml
+
+# STS (Spring Tool Suite)
+.apt_generated
+.settings/
+
+# JPA/Hibernate
+*.hbm
+*.hbm.xml
+
+# IntelliJ IDEA additional
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/gradle.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/contentModel.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Operating System
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Security and credentials
+*.key
+*.pem
+*.p12
+*.keystore
+secrets.properties
+.env
+.env.local
+.env.production
+
+# Documentation generation
+docs/build/
+site/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE specific
+*.sublime-project
+*.sublime-workspace
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
