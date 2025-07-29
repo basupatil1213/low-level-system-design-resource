@@ -8,6 +8,7 @@ This section contains real-world Low-Level Design problems commonly asked in tec
 Problems suitable for entry-level to mid-level positions. Focus on basic OOP concepts and simple design patterns.
 
 - **[Vending Machine](easy/vendingMachine/)** - Complete implementation with inventory, payment, and dispensing logic
+- **[Document Reader System](easy/documentReaderSystem/)** - Multi-format document processing with Factory and Singleton patterns
 
 ### 🟡 Medium Level (Coming Soon)
 Problems for senior positions requiring deeper design thinking and pattern knowledge.

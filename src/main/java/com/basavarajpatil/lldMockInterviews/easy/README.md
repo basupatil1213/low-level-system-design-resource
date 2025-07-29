@@ -41,6 +41,28 @@ This section contains entry-level Low-Level Design problems perfect for junior t
 
 [👉 View Problem Details](vendingMachine/)
 
+### 📄 Document Reader System
+**Difficulty**: ⭐⭐⭐⭐☆  
+**Estimated Time**: 60-75 minutes  
+**Key Concepts**: Factory pattern, Singleton pattern, File I/O, Interface design
+
+**What You'll Learn:**
+- Combining multiple design patterns effectively
+- Factory pattern for object creation
+- Singleton pattern for instance management
+- File processing and chunked reading
+- Interface segregation and default methods
+- Enum-based type safety
+
+**Core Classes:**
+- `DocumentReader` - Interface defining reading contract
+- `DocumentReaderFactory` - Factory for creating readers
+- `DocumentReaderType` - Enum for type safety
+- `TxtReader`, `PDFReader`, `DocxReader` - Concrete implementations
+- `Client` - Demonstration of various usage patterns
+
+[👉 View Problem Details](documentReaderSystem/)
+
 ## 🚀 How to Practice
 
 ### Step 1: Understand the Problem
@@ -72,6 +94,7 @@ This section contains entry-level Low-Level Design problems perfect for junior t
 | Problem | Classes | Patterns | Key Learning |
 |---------|---------|----------|--------------|
 | Vending Machine | 7 | Encapsulation, State Management | Object interaction, Error handling |
+| Document Reader System | 8 | Factory, Singleton, Strategy | Pattern combination, File I/O, Type safety |
 
 ## 🎓 Interview Preparation
 

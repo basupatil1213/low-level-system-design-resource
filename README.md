@@ -42,7 +42,8 @@ src/main/java/com/basavarajpatil/
 │           └── ServiceRegistry/    # Service discovery
 └── lldMockInterviews/       # Mock interview problems
     └── easy/               # Easy-level problems
-        └── vendingMachine/ # Vending machine implementation
+        ├── vendingMachine/     # Vending machine implementation
+        └── documentReaderSystem/ # Document processing system
 ```
 
 ## 🔧 Prerequisites
@@ -70,6 +71,7 @@ src/main/java/com/basavarajpatil/
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.notificationSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.documentReaderSystem.Client"
    ```
 
 ## 📖 Content Overview
@@ -86,6 +88,7 @@ src/main/java/com/basavarajpatil/
 
 #### Easy Level
 - **Vending Machine**: Complete implementation with inventory management, payment processing, and item dispensing
+- **Document Reader System**: Multi-format document processing demonstrating Factory and Singleton patterns
 
 ## 🎯 Learning Path
 
@@ -113,6 +116,16 @@ src/main/java/com/basavarajpatil/
 | **Extensibility** | Manual string constants | Type-safe enum additions |
 | **IDE Support** | Limited auto-completion | Full IntelliSense support |
 | **Best For** | Simple, flexible systems | Type-critical financial systems |
+
+### Mock Interview Problems Progression
+| Aspect | Vending Machine | Document Reader System |
+|--------|----------------|------------------------|
+| **Complexity** | ⭐⭐⭐☆☆ (Medium) | ⭐⭐⭐⭐☆ (Medium-High) |
+| **Patterns Used** | Encapsulation, State Management | Factory, Singleton, Strategy |
+| **Key Focus** | Object interaction, Error handling | Pattern combination, File I/O |
+| **Real-world I/O** | Simulated operations | Actual file reading (TXT) |
+| **Extensibility** | Adding new products/slots | Adding new document formats |
+| **Interview Level** | Junior to Mid-level | Mid to Senior level |
 
 This comparison helps understand when to choose different implementation approaches based on your system's requirements.
 
