@@ -1,0 +1,6 @@
+Hello, this is a sample text file.
+It contains multiple lines of text.
+This file is used to demonstrate the TxtReader functionality.
+Feel free to add more lines if you want to test chunked reading.
+The quick brown fox jumps over the lazy dog.
+End of sample text.
