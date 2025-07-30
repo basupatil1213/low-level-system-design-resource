@@ -37,7 +37,8 @@ src/main/java/com/basavarajpatil/
 │       │   ├── notificationSystem/  # Multi-channel notifications
 │       │   └── PaymentSystem/       # Multi-method payments
 │       ├── abstractFactory/ # Abstract Factory pattern examples
-│       │   └── guiComponents/       # Cross-platform GUI components
+│       │   ├── guiComponents/       # Cross-platform GUI components
+│       │   └── vehiclePartsFactory/ # Automotive manufacturing system
 │       └── Singleton/       # Singleton pattern examples
 │           ├── DatabaseConnection/  # DB connection management
 │           ├── Logger/             # Centralized logging
@@ -73,6 +74,7 @@ src/main/java/com/basavarajpatil/
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.notificationSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.guiComponents.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.vehiclePartsFactory.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.documentReaderSystem.Client"
    ```
@@ -85,7 +87,9 @@ src/main/java/com/basavarajpatil/
 - **Factory Pattern**: 
   - Notification system implementation (email, SMS)
   - Payment system implementation (UPI, PayPal, Credit Card)
-- **Abstract Factory Pattern**: Cross-platform GUI components (Windows, macOS)
+- **Abstract Factory Pattern**: 
+  - Cross-platform GUI components (Windows, macOS)
+  - Vehicle parts manufacturing system (Car, Bike, Truck families)
 - **Singleton Pattern**: Database connection, Logger, Service registry
 
 ### 🧪 Mock Interviews

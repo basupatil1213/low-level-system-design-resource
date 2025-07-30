@@ -32,7 +32,27 @@ Concrete Factory A  Concrete Factory B
 Product Family A   Product Family B
 ```
 
-## 📁 Implementation: GUI Components System
+## 📁 Pattern Implementations
+
+This directory contains two comprehensive implementations of the Abstract Factory pattern:
+
+### 1. 🖥️ GUI Components System (`guiComponents/`)
+Cross-platform GUI component creation for Windows and macOS operating systems.
+- **Product Families**: Windows Components, macOS Components
+- **Products**: Button, Checkbox
+- **Use Case**: Cross-platform desktop application development
+- **Key Features**: Platform detection, consistent UI across operating systems
+
+### 2. 🚗 Vehicle Parts Factory (`vehiclePartsFactory/`)
+Automotive manufacturing system for creating compatible vehicle component families.
+- **Product Families**: Car Parts, Bike Parts, Truck Parts
+- **Products**: Engine, Tire, Brake
+- **Use Case**: Automotive parts manufacturing and assembly
+- **Key Features**: Parts compatibility, type safety, extensible vehicle types
+
+---
+
+## 📱 Implementation 1: GUI Components System
 
 This implementation demonstrates cross-platform GUI component creation for Windows and macOS operating systems.
 
@@ -184,6 +204,122 @@ Adding new products or platforms requires:
 2. Concrete implementations for each platform
 3. Update factories to create new products
 4. Minimal changes to existing code
+
+---
+
+## 🚗 Implementation 2: Vehicle Parts Factory
+
+This implementation demonstrates automotive manufacturing with compatible vehicle component families.
+
+### System Overview
+The Vehicle Parts Factory creates families of compatible automotive components for different vehicle types (Car, Bike, Truck), ensuring that all parts from the same factory work together seamlessly.
+
+### Core Architecture
+
+#### 1. Abstract Products
+```java
+public interface Engine {
+    void start();
+    void stop();
+    int getHorsepower();
+    String getFuelType();
+    void performMaintenance();
+}
+
+public interface Tire {
+    void rotate();
+    void brake();
+    int getDiameter();
+    String getTreadPattern();
+    int getMaxPressure();
+}
+
+public interface Brake {
+    void apply();
+    void release();
+    String getBrakeType();
+    int getMaxForce();
+    boolean isAntiLockEnabled();
+}
+```
+
+#### 2. Abstract Factory
+```java
+public interface VehicleFactory {
+    Engine createEngine();
+    Tire createTire();
+    Brake createBrake();
+    default String getVehicleType() { return "Unknown"; }
+}
+```
+
+#### 3. Product Families
+
+##### Car Family
+- **CarEngine**: 200HP V6 Gasoline with advanced maintenance
+- **CarTire**: 17" All-Season for passenger comfort  
+- **CarBrake**: Disc brakes with ABS for safety
+
+##### Bike Family  
+- **BikeEngine**: 50HP Single-cylinder for efficiency
+- **BikeTire**: 19" Sport tires for optimal grip
+- **BikeBrake**: Manual disc brakes
+
+##### Truck Family
+- **TruckEngine**: 400HP V8 Diesel for heavy-duty performance
+- **TruckTire**: 22" Heavy-duty for maximum load capacity
+- **TruckBrake**: Air brakes with maximum stopping power
+
+#### 4. Factory Provider & Type Safety
+```java
+public enum VehicleType {
+    CAR("Car", "Four-wheeled passenger vehicle"),
+    BIKE("Bike", "Two-wheeled motor vehicle"), 
+    TRUCK("Truck", "Heavy-duty cargo vehicle");
+}
+
+public class VehicleFactoryProvider {
+    public static VehicleFactory getFactory(VehicleType vehicleType) {
+        return switch (vehicleType) {
+            case CAR -> new CarFactory();
+            case BIKE -> new BikeFactory();
+            case TRUCK -> new TruckFactory();
+        };
+    }
+}
+```
+
+#### 5. Assembly & Client Usage
+```java
+public class VehicleAssembler {
+    private final Engine engine;
+    private final Tire tire;
+    private final Brake brake;
+    
+    public VehicleAssembler(VehicleFactory factory) {
+        // All parts guaranteed to be from same family
+        this.engine = factory.createEngine();
+        this.tire = factory.createTire();
+        this.brake = factory.createBrake();
+    }
+    
+    public void assemble() {
+        engine.start();
+        tire.rotate();
+        brake.apply();
+        // All components work together seamlessly
+    }
+}
+```
+
+### Key Benefits Demonstrated
+- **Parts Compatibility**: All components from one factory work together
+- **Type Safety**: Enum-based vehicle types prevent runtime errors  
+- **Extensibility**: Easy addition of new vehicle types (Electric, Hybrid)
+- **Family Consistency**: Guaranteed compatibility within product families
+- **Manufacturing Flexibility**: Different production processes per vehicle type
+
+---
 
 ## 🧪 Usage Examples
 

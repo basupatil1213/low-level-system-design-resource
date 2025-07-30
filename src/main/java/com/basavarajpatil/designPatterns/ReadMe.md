@@ -12,6 +12,7 @@ Creational patterns deal with object creation mechanisms, trying to create objec
   - 💳 [Payment System](creational/factory/PaymentSystem/) - Multi-method payment processing
 - **[Abstract Factory Pattern](creational/abstractFactory/)** - Creates families of related objects
   - 🖥️ [GUI Components](creational/abstractFactory/guiComponents/) - Cross-platform user interface elements
+  - 🚗 [Vehicle Parts Factory](creational/abstractFactory/vehiclePartsFactory/) - Automotive manufacturing system
 - **[Singleton Pattern](creational/Singleton/)** - Ensures a class has only one instance and provides global access
   - 🔒 [Database Connection](creational/Singleton/DatabaseConnection/) - Thread-safe DB connection management
   - 📝 [Logger](creational/Singleton/Logger/) - Centralized logging system

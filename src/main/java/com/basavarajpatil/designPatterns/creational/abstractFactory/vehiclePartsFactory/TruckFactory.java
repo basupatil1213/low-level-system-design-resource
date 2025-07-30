@@ -1,29 +1,29 @@
 package com.basavarajpatil.designPatterns.creational.abstractFactory.vehiclePartsFactory;
 
 /**
- * Concrete Factory for creating Bike family of products.
+ * Concrete Factory for creating Truck family of products.
  * This factory ensures that all created products are compatible with each other
- * and belong to the same product family (Bike).
+ * and belong to the same product family (Truck).
  */
-public class BikeFactory implements VehicleFactory {
+public class TruckFactory implements VehicleFactory {
     
     @Override
     public Engine createEngine() {
-        return new BikeEngine();
+        return new TruckEngine();
     }
 
     @Override
     public Tire createTire() {
-        return new BikeTire();
+        return new TruckTire();
     }
     
     @Override
     public Brake createBrake() {
-        return new BikeBrake();
+        return new TruckBrake();
     }
     
     @Override
     public String getVehicleType() {
-        return "Bike";
+        return "Truck";
     }
 }
