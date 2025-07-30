@@ -36,6 +36,8 @@ src/main/java/com/basavarajpatil/
 │       ├── factory/         # Factory pattern examples
 │       │   ├── notificationSystem/  # Multi-channel notifications
 │       │   └── PaymentSystem/       # Multi-method payments
+│       ├── abstractFactory/ # Abstract Factory pattern examples
+│       │   └── guiComponents/       # Cross-platform GUI components
 │       └── Singleton/       # Singleton pattern examples
 │           ├── DatabaseConnection/  # DB connection management
 │           ├── Logger/             # Centralized logging
@@ -70,6 +72,7 @@ src/main/java/com/basavarajpatil/
    # Run specific examples
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.notificationSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.guiComponents.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.documentReaderSystem.Client"
    ```
@@ -82,6 +85,7 @@ src/main/java/com/basavarajpatil/
 - **Factory Pattern**: 
   - Notification system implementation (email, SMS)
   - Payment system implementation (UPI, PayPal, Credit Card)
+- **Abstract Factory Pattern**: Cross-platform GUI components (Windows, macOS)
 - **Singleton Pattern**: Database connection, Logger, Service registry
 
 ### 🧪 Mock Interviews
@@ -107,6 +111,15 @@ src/main/java/com/basavarajpatil/
 - **Compare Approaches**: Understand different implementation strategies (e.g., string-based vs enum-based factories)
 
 ## 🔍 Key Learning Comparisons
+
+### Creational Patterns Evolution
+| Aspect | Factory Pattern | Abstract Factory | Singleton Pattern |
+|--------|----------------|------------------|-------------------|
+| **Purpose** | Create single objects | Create object families | Single instance management |
+| **Complexity** | ⭐⭐☆☆☆ | ⭐⭐⭐⭐☆ | ⭐⭐⭐☆☆ |
+| **Flexibility** | Medium | High | Low |
+| **Use Case** | Multiple implementations | Platform-specific families | Resource management |
+| **Example** | NotificationFactory | GUIFactory | DatabaseConnection |
 
 ### Factory Pattern Implementations
 | Aspect | Notification System | Payment System |
