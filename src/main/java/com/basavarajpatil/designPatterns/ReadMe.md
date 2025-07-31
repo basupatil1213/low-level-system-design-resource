@@ -18,6 +18,19 @@ Creational patterns deal with object creation mechanisms, trying to create objec
   - 📝 [Logger](creational/Singleton/Logger/) - Centralized logging system
   - 🗂️ [Service Registry](creational/Singleton/ServiceRegistry/) - Service discovery and management
 
+### 🔧 Structural Patterns
+Structural patterns deal with object composition and relationships between entities. They help ensure that when one part of a system changes, the entire structure doesn't need to change.
+
+- **[Adapter Pattern](structuralPatterns/adapter/)** - Allows incompatible interfaces to work together
+  - 💳 [Payment Gateway](structuralPatterns/adapter/paymentGateway/) - Multi-provider payment system integration
+- **[Decorator Pattern](structuralPatterns/decorator/)** - Adds behavior to objects dynamically *(Coming Soon)*
+
+### 🎭 Behavioral Patterns
+Behavioral patterns focus on communication between objects and the assignment of responsibilities between objects.
+
+- **[Observer Pattern](behaviouralPatterns/observer/)** - Defines one-to-many dependency between objects *(Coming Soon)*
+- **[Strategy Pattern](behaviouralPatterns/strategy/)** - Defines family of algorithms and makes them interchangeable *(Coming Soon)*
+
 ## 🎯 Why Use Design Patterns?
 
 1. **Reusability**: Solutions can be reused across different projects
@@ -48,6 +61,9 @@ Each pattern directory contains:
 - "Design a notification system using Factory pattern"
 - "When would you use the Observer pattern?"
 - "Explain the difference between Factory and Abstract Factory"
+- "Create an adapter for integrating third-party payment systems"
+- "Design a decorator chain for processing requests"
+- "How would you handle multiple incompatible APIs?"
 
 ## 🔗 Resources
 

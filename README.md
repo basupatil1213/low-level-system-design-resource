@@ -32,17 +32,21 @@ This repository serves as a comprehensive study guide for Low-Level Design (LLD)
 ```
 src/main/java/com/basavarajpatil/
 ├── designPatterns/           # Design pattern implementations
-│   └── creational/          # Creational design patterns
-│       ├── factory/         # Factory pattern examples
-│       │   ├── notificationSystem/  # Multi-channel notifications
-│       │   └── PaymentSystem/       # Multi-method payments
-│       ├── abstractFactory/ # Abstract Factory pattern examples
-│       │   ├── guiComponents/       # Cross-platform GUI components
-│       │   └── vehiclePartsFactory/ # Automotive manufacturing system
-│       └── Singleton/       # Singleton pattern examples
-│           ├── DatabaseConnection/  # DB connection management
-│           ├── Logger/             # Centralized logging
-│           └── ServiceRegistry/    # Service discovery
+│   ├── creational/          # Creational design patterns
+│   │   ├── factory/         # Factory pattern examples
+│   │   │   ├── notificationSystem/  # Multi-channel notifications
+│   │   │   └── PaymentSystem/       # Multi-method payments
+│   │   ├── abstractFactory/ # Abstract Factory pattern examples
+│   │   │   ├── guiComponents/       # Cross-platform GUI components
+│   │   │   └── vehiclePartsFactory/ # Automotive manufacturing system
+│   │   └── Singleton/       # Singleton pattern examples
+│   │       ├── DatabaseConnection/  # DB connection management
+│   │       ├── Logger/             # Centralized logging
+│   │       └── ServiceRegistry/    # Service discovery
+│   ├── structuralPatterns/  # Structural design patterns
+│   │   └── adapter/         # Adapter pattern examples
+│   │       └── paymentGateway/     # Multi-provider payment integration
+│   └── behaviouralPatterns/ # Behavioral design patterns (coming soon)
 └── lldMockInterviews/       # Mock interview problems
     └── easy/               # Easy-level problems
         ├── vendingMachine/     # Vending machine implementation
@@ -75,6 +79,7 @@ src/main/java/com/basavarajpatil/
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.guiComponents.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.vehiclePartsFactory.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.structuralPatterns.adapter.paymentGateway.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.documentReaderSystem.Client"
    ```
@@ -91,6 +96,11 @@ src/main/java/com/basavarajpatil/
   - Cross-platform GUI components (Windows, macOS)
   - Vehicle parts manufacturing system (Car, Bike, Truck families)
 - **Singleton Pattern**: Database connection, Logger, Service registry
+
+#### Structural Patterns
+- **Adapter Pattern**:
+  - Payment gateway integration (Stripe, PayPal, Square)
+  - Multi-provider API adaptation with unified interface
 
 ### 🧪 Mock Interviews
 
@@ -116,6 +126,13 @@ src/main/java/com/basavarajpatil/
 
 ## 🔍 Key Learning Comparisons
 
+### Design Pattern Categories
+| Category | Purpose | Complexity | Examples in Repo |
+|----------|---------|------------|------------------|
+| **Creational** | Object creation mechanisms | ⭐⭐⭐☆☆ | Factory, Abstract Factory, Singleton |
+| **Structural** | Object composition & relationships | ⭐⭐⭐⭐☆ | Adapter Pattern |
+| **Behavioral** | Communication between objects | ⭐⭐⭐⭐⭐ | Coming Soon |
+
 ### Creational Patterns Evolution
 | Aspect | Factory Pattern | Abstract Factory | Singleton Pattern |
 |--------|----------------|------------------|-------------------|
@@ -133,6 +150,17 @@ src/main/java/com/basavarajpatil/
 | **Extensibility** | Manual string constants | Type-safe enum additions |
 | **IDE Support** | Limited auto-completion | Full IntelliSense support |
 | **Best For** | Simple, flexible systems | Type-critical financial systems |
+
+### Structural Patterns Implementation
+| Aspect | Payment Gateway Adapter |
+|--------|------------------------|
+| **Challenge** | API incompatibility between providers |
+| **Solution** | Unified PaymentProcessor interface |
+| **Complexity** | ⭐⭐⭐⭐☆ (High) |
+| **Key Features** | Parameter mapping, unit conversion, error handling |
+| **Providers** | Stripe, PayPal, Square |
+| **Pattern Benefits** | Unified interface, easy provider switching |
+| **Real-world Value** | Production-ready payment integration |
 
 ### Mock Interview Problems Progression
 | Aspect | Vending Machine | Document Reader System |
