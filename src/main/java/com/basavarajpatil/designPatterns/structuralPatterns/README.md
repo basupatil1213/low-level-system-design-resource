@@ -39,9 +39,27 @@ Structural patterns explain how to assemble objects and classes into larger stru
 - Managing different error handling mechanisms
 
 ### 2. Decorator Pattern
-**Location**: `decorator/` *(Coming Soon)*
+**Location**: `decorator/notificationSystem/`
 
 **Purpose**: Attach additional responsibilities to objects dynamically without altering their structure.
+
+**Key Components**:
+- **Component Interface**: `Notifier` - The interface for objects that can have responsibilities added
+- **Concrete Component**: `BaseNotifier` - Basic notification with logging functionality  
+- **Decorator**: `NotifierDecorator` - Abstract class that wraps and delegates to components
+- **Concrete Decorators**: `EmailNotifier`, `SMSNotifier`, `SlackNotifier` - Add specific notification channels
+
+**Real-world Applications**:
+- Multi-channel notification systems
+- Request/response processing pipelines
+- Stream processing (compression, encryption, buffering)
+- UI component enhancement (borders, scrollbars, shadows)
+
+**Interview Focus Areas**:
+- Dynamic behavior addition vs static inheritance
+- Decorator chain composition and order dependencies
+- Maintaining interface consistency across decorators
+- Handling validation and error propagation in chains
 
 ---
 

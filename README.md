@@ -44,8 +44,10 @@ src/main/java/com/basavarajpatil/
 │   │       ├── Logger/             # Centralized logging
 │   │       └── ServiceRegistry/    # Service discovery
 │   ├── structuralPatterns/  # Structural design patterns
-│   │   └── adapter/         # Adapter pattern examples
-│   │       └── paymentGateway/     # Multi-provider payment integration
+│   │   ├── adapter/         # Adapter pattern examples
+│   │   │   └── paymentGateway/     # Multi-provider payment integration
+│   │   └── decorator/       # Decorator pattern examples
+│   │       └── notificationSystem/ # Multi-channel notification system
 │   └── behaviouralPatterns/ # Behavioral design patterns (coming soon)
 └── lldMockInterviews/       # Mock interview problems
     └── easy/               # Easy-level problems
@@ -80,6 +82,7 @@ src/main/java/com/basavarajpatil/
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.guiComponents.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.vehiclePartsFactory.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.structuralPatterns.adapter.paymentGateway.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.structuralPatterns.decorator.notificationSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.documentReaderSystem.Client"
    ```
@@ -101,6 +104,9 @@ src/main/java/com/basavarajpatil/
 - **Adapter Pattern**:
   - Payment gateway integration (Stripe, PayPal, Square)
   - Multi-provider API adaptation with unified interface
+- **Decorator Pattern**:
+  - Multi-channel notification system (Email, SMS, Slack)
+  - Dynamic behavior composition with validation chains
 
 ### 🧪 Mock Interviews
 
@@ -152,15 +158,15 @@ src/main/java/com/basavarajpatil/
 | **Best For** | Simple, flexible systems | Type-critical financial systems |
 
 ### Structural Patterns Implementation
-| Aspect | Payment Gateway Adapter |
-|--------|------------------------|
-| **Challenge** | API incompatibility between providers |
-| **Solution** | Unified PaymentProcessor interface |
-| **Complexity** | ⭐⭐⭐⭐☆ (High) |
-| **Key Features** | Parameter mapping, unit conversion, error handling |
-| **Providers** | Stripe, PayPal, Square |
-| **Pattern Benefits** | Unified interface, easy provider switching |
-| **Real-world Value** | Production-ready payment integration |
+| Aspect | Payment Gateway Adapter | Notification System Decorator |
+|--------|------------------------|--------------------------------|
+| **Challenge** | API incompatibility between providers | Adding multiple notification channels dynamically |
+| **Solution** | Unified PaymentProcessor interface | Composable NotifierDecorator chain |
+| **Complexity** | ⭐⭐⭐⭐☆ (High) | ⭐⭐⭐⭐⭐ (Very High) |
+| **Key Features** | Parameter mapping, unit conversion, error handling | Dynamic composition, validation chains, priority handling |
+| **Providers/Channels** | Stripe, PayPal, Square | Email, SMS, Slack + Base Logging |
+| **Pattern Benefits** | Unified interface, easy provider switching | Runtime behavior composition, flexible combinations |
+| **Real-world Value** | Production-ready payment integration | Enterprise notification infrastructure |
 
 ### Mock Interview Problems Progression
 | Aspect | Vending Machine | Document Reader System |

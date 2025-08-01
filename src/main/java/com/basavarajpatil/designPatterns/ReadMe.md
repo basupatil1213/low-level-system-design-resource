@@ -23,7 +23,8 @@ Structural patterns deal with object composition and relationships between entit
 
 - **[Adapter Pattern](structuralPatterns/adapter/)** - Allows incompatible interfaces to work together
   - 💳 [Payment Gateway](structuralPatterns/adapter/paymentGateway/) - Multi-provider payment system integration
-- **[Decorator Pattern](structuralPatterns/decorator/)** - Adds behavior to objects dynamically *(Coming Soon)*
+- **[Decorator Pattern](structuralPatterns/decorator/)** - Adds behavior to objects dynamically
+  - 🔔 [Notification System](structuralPatterns/decorator/notificationSystem/) - Multi-channel notification with dynamic composition
 
 ### 🎭 Behavioral Patterns
 Behavioral patterns focus on communication between objects and the assignment of responsibilities between objects.
@@ -64,6 +65,8 @@ Each pattern directory contains:
 - "Create an adapter for integrating third-party payment systems"
 - "Design a decorator chain for processing requests"
 - "How would you handle multiple incompatible APIs?"
+- "Implement a notification system using decorator pattern"
+- "Explain the difference between Adapter and Decorator patterns"
 
 ## 🔗 Resources
 
