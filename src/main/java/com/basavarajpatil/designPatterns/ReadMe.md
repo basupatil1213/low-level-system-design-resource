@@ -13,6 +13,8 @@ Creational patterns deal with object creation mechanisms, trying to create objec
 - **[Abstract Factory Pattern](creational/abstractFactory/)** - Creates families of related objects
   - 🖥️ [GUI Components](creational/abstractFactory/guiComponents/) - Cross-platform user interface elements
   - 🚗 [Vehicle Parts Factory](creational/abstractFactory/vehiclePartsFactory/) - Automotive manufacturing system
+- **[Builder Pattern](creational/builder/)** - Constructs complex objects step by step
+  - 🍽️ [Meal Ordering System](creational/builder/mealOrderingSystem/) - Restaurant meal construction with validation
 - **[Singleton Pattern](creational/Singleton/)** - Ensures a class has only one instance and provides global access
   - 🔒 [Database Connection](creational/Singleton/DatabaseConnection/) - Thread-safe DB connection management
   - 📝 [Logger](creational/Singleton/Logger/) - Centralized logging system
@@ -67,6 +69,10 @@ Each pattern directory contains:
 - "How would you handle multiple incompatible APIs?"
 - "Implement a notification system using decorator pattern"
 - "Explain the difference between Adapter and Decorator patterns"
+- "Implement the Builder pattern for a complex object"
+- "When would you use Builder pattern over telescoping constructors?"
+- "Design a meal ordering system using Builder pattern"
+- "How does Builder pattern help with immutable objects?"
 
 ## 🔗 Resources
 
