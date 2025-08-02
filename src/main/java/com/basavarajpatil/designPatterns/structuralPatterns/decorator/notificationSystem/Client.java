@@ -26,6 +26,7 @@ public class Client {
         
         System.out.println("🎯 Decorator Pattern Demo Completed!");
         System.out.println("=====================================");
+        return;
     }
     
     /**
