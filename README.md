@@ -39,6 +39,8 @@ src/main/java/com/basavarajpatil/
 │   │   ├── abstractFactory/ # Abstract Factory pattern examples
 │   │   │   ├── guiComponents/       # Cross-platform GUI components
 │   │   │   └── vehiclePartsFactory/ # Automotive manufacturing system
+│   │   ├── builder/         # Builder pattern examples
+│   │   │   └── mealOrderingSystem/  # Restaurant meal construction
 │   │   └── Singleton/       # Singleton pattern examples
 │   │       ├── DatabaseConnection/  # DB connection management
 │   │       ├── Logger/             # Centralized logging
@@ -81,6 +83,7 @@ src/main/java/com/basavarajpatil/
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.factory.PaymentSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.guiComponents.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.abstractFactory.vehiclePartsFactory.Client"
+   mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.creational.builder.mealOrderingSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.structuralPatterns.adapter.paymentGateway.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.designPatterns.structuralPatterns.decorator.notificationSystem.Client"
    mvn exec:java -Dexec.mainClass="com.basavarajpatil.lldMockInterviews.easy.vendingMachine.Client"
@@ -98,6 +101,9 @@ src/main/java/com/basavarajpatil/
 - **Abstract Factory Pattern**: 
   - Cross-platform GUI components (Windows, macOS)
   - Vehicle parts manufacturing system (Car, Bike, Truck families)
+- **Builder Pattern**:
+  - Restaurant meal ordering system with step-by-step construction
+  - Fluent interface, validation, and Director pattern integration
 - **Singleton Pattern**: Database connection, Logger, Service registry
 
 #### Structural Patterns
@@ -135,18 +141,18 @@ src/main/java/com/basavarajpatil/
 ### Design Pattern Categories
 | Category | Purpose | Complexity | Examples in Repo |
 |----------|---------|------------|------------------|
-| **Creational** | Object creation mechanisms | ⭐⭐⭐☆☆ | Factory, Abstract Factory, Singleton |
-| **Structural** | Object composition & relationships | ⭐⭐⭐⭐☆ | Adapter Pattern |
+| **Creational** | Object creation mechanisms | ⭐⭐⭐☆☆ | Factory, Abstract Factory, Builder, Singleton |
+| **Structural** | Object composition & relationships | ⭐⭐⭐⭐☆ | Adapter, Decorator |
 | **Behavioral** | Communication between objects | ⭐⭐⭐⭐⭐ | Coming Soon |
 
 ### Creational Patterns Evolution
-| Aspect | Factory Pattern | Abstract Factory | Singleton Pattern |
-|--------|----------------|------------------|-------------------|
-| **Purpose** | Create single objects | Create object families | Single instance management |
-| **Complexity** | ⭐⭐☆☆☆ | ⭐⭐⭐⭐☆ | ⭐⭐⭐☆☆ |
-| **Flexibility** | Medium | High | Low |
-| **Use Case** | Multiple implementations | Platform-specific families | Resource management |
-| **Example** | NotificationFactory | GUIFactory | DatabaseConnection |
+| Aspect | Factory Pattern | Abstract Factory | Builder Pattern | Singleton Pattern |
+|--------|----------------|------------------|-----------------|-------------------|
+| **Purpose** | Create single objects | Create object families | Step-by-step construction | Single instance management |
+| **Complexity** | ⭐⭐☆☆☆ | ⭐⭐⭐⭐☆ | ⭐⭐⭐⭐☆ | ⭐⭐⭐☆☆ |
+| **Flexibility** | Medium | High | Very High | Low |
+| **Use Case** | Multiple implementations | Platform-specific families | Complex object construction | Resource management |
+| **Example** | NotificationFactory | GUIFactory | MealBuilder | DatabaseConnection |
 
 ### Factory Pattern Implementations
 | Aspect | Notification System | Payment System |
@@ -156,6 +162,21 @@ src/main/java/com/basavarajpatil/
 | **Extensibility** | Manual string constants | Type-safe enum additions |
 | **IDE Support** | Limited auto-completion | Full IntelliSense support |
 | **Best For** | Simple, flexible systems | Type-critical financial systems |
+
+### Builder Pattern Implementation
+| Aspect | Meal Ordering System |
+|--------|---------------------|
+| **Construction Type** | Step-by-step with validation |
+| **Interface Style** | Fluent method chaining |
+| **Patterns Combined** | Builder + Director + Abstract Factory |
+| **Complexity** | ⭐⭐⭐⭐☆ (High) |
+| **Key Features** | Immutable products, validation chains, multiple meal types |
+| **Meal Types** | Kids meals, Deluxe meals with premium ingredients |
+| **Validation** | Complete meal checking, nutritional analysis |
+| **Director Integration** | Standardized construction processes |
+| **Error Handling** | State validation, required field checking |
+| **Extensibility** | Easy to add new meal types and menu items |
+| **Real-world Value** | Restaurant ordering systems, complex configuration builders |
 
 ### Structural Patterns Implementation
 | Aspect | Payment Gateway Adapter | Notification System Decorator |
